@@ -4,6 +4,7 @@ require_once 'config/config.php';
 
 $jour = 10;
 $annee = 2080;
+$age = 90;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,7 +21,7 @@ $annee = 2080;
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <br> 
-                <h3 class="text-center"> <span class="badge bg-success"> FORMULAIRE DES PERSONNES </span></h3>
+                <h3 class="text-center"> <span class="badge bg-success"> TEST FORMULAIRE AVEC BASE DE DONNEE </span></h3>
                 <hr>
                 <br>
             </div>
@@ -28,7 +29,7 @@ $annee = 2080;
         
         <div class="row">
             <div class="col-md-8">
-                <h3 class="text-center alert alert-primary"> <span class="badge bg-primary"> Affichage des données enregistrées </span></h3>
+                <h3 class="text-center alert alert-primary"> <span class="badge bg-primary"> Données enregistrées dans le serveur</span></h3>
                 <hr>
                 <table class="table table-bordered">
                     <thead>
@@ -61,42 +62,42 @@ $annee = 2080;
             </div>
 
             <div class="col-md-4">
-                <h3 class="text-center alert alert-primary"> <span class="badge bg-primary"> INCRIPTION </span></h3>
+                <h3 class="text-center alert alert-primary"> <span class="badge bg-primary"> INSCRIVEZ VOUS </span></h3>
                 <hr>
-                <form action="" method="post">
+                <form action="config/config.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label>Nom: </label>
+                        <label for="nom">Nom: </label>
                         <input type="text" name="nom" class="form-control" placeholder="" class="form-control is-valid" required>
                     </div>
                     <div class="form-group">
-                        <label>Prenom: </label>
+                        <label for="prenom">Prenom: </label>
                         <input type="text" name="prenom" class="form-control" placeholder="" class="form-control is-valid" required>
                     </div>
 
                     <!--Date-->
                     <div class="row">
                         <div class="form-group col-md-4">
-                            <label>Jour</label>
+                            <label for="jour">Jour</label>
                             <select name="textjour" id="" class="form-control">
-                                <?php if (isset($_POST['textannee'])) { echo repetitionJ($jour);} ?>
+                                <?= repetitionJ($jour) ?>
                                 <div class="feed-back">
                                     good!
                                 </div>
                             </select>
                         </div>
                         <div class="form-group col-md-4">
-                            <label>Mois</label>
+                            <label for="mois">Mois</label>
                             <select name='textmois'class='form-control'>
-                                <?php if (isset($_POST[''])) { echo repetitionM(); } ?>
+                                <?= repetitionM() ?>
                                 <div class="feed-back">
                                     good!
                                 </div>
                             </select>
                         </div>
                         <div class="form-group col-md-4">
-                            <label>Année</label>
+                            <label for="annee">Année</label>
                             <select name="textannee" id="" class="form-control">
-                                <?php if (isset($_POST['textannee'])) { echo repetitionA($annee);} ?>
+                                <?= repetitionA($annee) ?>
                                 <div class="feed-back">
                                     good!
                                 </div>
@@ -104,32 +105,40 @@ $annee = 2080;
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Ville: </label>
+                        <label for="ville">Ville: </label>
                         <input type="text" name="ville" class="form-control" placeholder="" class="form-control is-valid" required>
+                        <?php if (isset($_POST['ville'])): ?>
                         <div class="feed-back">
                             good!
                         </div>
+                        <?php endif ?>
                     </div>
                     <div class="form-group">
-                        <label>Age: </label>
+                        <label for="age">Age: </label>
                         <input type="number" name="age" class="form-control" placeholder="" class="form-control is-valid" required>
+                        <?php if (isset($_POST['age'])): ?>
                         <div class="feed-back">
                             good!
                         </div>
+                        <?php endif ?>
                     </div>
                     <div class="form-group">
-                        <label>Email: </label>
+                        <label for="email">Email: </label>
                         <input type="email" name="email" class="form-control" placeholder="" class="form-control is-valid" required>
+                        <?php if (isset($_POST['email'])): ?>
                         <div class="feed-back">
                             good!
                         </div>
+                        <?php endif ?>
                     </div>
                     <div class="form-group">
-                        <label>Tel: </label>
+                        <label for="tel">Tel: </label>
                         <input type="numero" name="numero" class="form-control" placeholder="" class="form-control is-valid" required>
+                        <?php if (isset($_POST['numero'])): ?>
                         <div class="feed-back">
                             good!
                         </div>
+                        <?php endif ?>
                         <br>
                     </div>
                     <div class="form-group">

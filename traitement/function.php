@@ -35,3 +35,11 @@ function repetitionA ($nb) {
     }
     
 }
+
+function ageUser () {
+   
+}
+
+function baseDonnee () {
+    
+}
