@@ -77,27 +77,30 @@ $age = 90;
                     <!--Date-->
                     <div class="row">
                         <div class="form-group col-md-4">
-                            <label for="jour">Jour</label>
+
                             <select name="textjour" id="" class="form-control">
                                 <?= repetitionJ($jour) ?>
+                                <label for="jour">Jour</label>
                                 <div class="feed-back">
                                     good!
                                 </div>
                             </select>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="mois">Mois</label>
+
                             <select name='textmois'class='form-control'>
                                 <?= repetitionM() ?>
+                                <label for="mois">Mois</label>
                                 <div class="feed-back">
                                     good!
                                 </div>
                             </select>
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="annee">Année</label>
+                            
                             <select name="textannee" id="" class="form-control">
                                 <?= repetitionA($annee) ?>
+                                <label for="annee">Année</label>
                                 <div class="feed-back">
                                     good!
                                 </div>

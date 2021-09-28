@@ -2,10 +2,42 @@
 
 // connexion au server
 
-$connexion = new PDO('mysql:host=localhost;dbname=uway', 'root', 'LJSF§£%%/§/.°980732mlsdjfsf');
-$requete = $bdd->prepare('INSERT INTO personnes (nom, prenom, ville, age, email, tel) VALUES (?, ?, ?, ?, ?, ?, ?)');
+$host = 'localhost';
+$user = "root";
+$pass = "LJSF§£%%/§/.°980732mlsdjfsf";
+$dbname = 'uway';
 
-$requete->execute(array( htmlspecialchars($_POST['nom']) , htmlspecialchars($_POST['prenom']), htmlspecialchars($_POST['']), htmlspecialchars($_POST['ville']), htmlspecialchars($_POST['age']), htmlspecialchars($_POST['email']), htmlspecialchars($_POST['tel'])));
+try 
+{
+    $dsn = "mysql:host=localhost".$host . ";dbname=" . $dbname;
+    $pdo = new PDO($dsn, $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+    //echo "La connexion a ete etablie avec success";
+}
+catch(PDOException $e)
+{
+    echo "Pas de connexion a la base de donnees" . $e->getMessage();
+}
+
+if (isset($_POST['btn_Ajout'])) {
+    $cours = $_POST[''];
+
+
+
+    $sql = "INSERT INTO personnes (nom, prenom, ville, date_user, age, email, tel) VALUES (:nom, :prenom, :date_user, :ville, :age, :email, :tel, ?)";
+    $stmt = $pdo->prepare($sql);
+    
+    $stmt->bindParam(':nom', $nom);
+    $stmt->bindParam(':prenom', $prenom);
+    $stmt->bindParam(':date_user', $date_user);
+    $stmt->bindParam(':age', $age);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':tel', $tel);
+
+
+    $stmt->execute();
+    header('Location:index.php');
+}
 
 
 ?>
