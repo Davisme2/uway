@@ -1,6 +1,6 @@
 <?php 
-require_once 'config/config.php';
 require 'traitement/function.php';
+require_once 'config/config.php';
 
 $jour = 10;
 $annee = 2080;
@@ -20,7 +20,7 @@ $annee = 2080;
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <br> 
-                <h3 class="text-center">FORMULAIRE DES PERSONNES </h3>
+                <h3 class="text-center"> <span class="badge bg-success"> FORMULAIRE DES PERSONNES </span></h3>
                 <hr>
                 <br>
             </div>
@@ -28,11 +28,11 @@ $annee = 2080;
         
         <div class="row">
             <div class="col-md-8">
-                <h3 class="text-center">Affichage des donnée enregistrées</h3>
+                <h3 class="text-center alert alert-primary"> <span class="badge bg-primary"> Affichage des données enregistrées </span></h3>
                 <hr>
                 <table class="table table-bordered">
                     <thead>
-                        <tr>
+                        <tr class="table-success">
                             <th>Id</th>
                             <th>Nom</th>
                             <th>Prenom</th>
@@ -45,7 +45,7 @@ $annee = 2080;
                     </thead>
 
                     <tbody>
-                        <tr>
+                        <tr class="table-light">
                             <td>1</td>
                             <td>Manglé</td>
                             <td>David</td>
@@ -61,58 +61,79 @@ $annee = 2080;
             </div>
 
             <div class="col-md-4">
-                <h3 class="text-center">INCRIPTION</h3>
+                <h3 class="text-center alert alert-primary"> <span class="badge bg-primary"> INCRIPTION </span></h3>
                 <hr>
                 <form action="" method="post">
                     <div class="form-group">
                         <label>Nom: </label>
-                        <input type="text" name="nom" class="form-control" placeholder="" required>
+                        <input type="text" name="nom" class="form-control" placeholder="" class="form-control is-valid" required>
                     </div>
                     <div class="form-group">
                         <label>Prenom: </label>
-                        <input type="text" name="prenom" class="form-control" placeholder="" required>
+                        <input type="text" name="prenom" class="form-control" placeholder="" class="form-control is-valid" required>
                     </div>
 
                     <!--Date-->
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
+                    <div class="row">
+                        <div class="form-group col-md-4">
                             <label>Jour</label>
                             <select name="textjour" id="" class="form-control">
                                 <?php if (isset($_POST['textannee'])) { echo repetitionJ($jour);} ?>
+                                <div class="feed-back">
+                                    good!
+                                </div>
                             </select>
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-4">
                             <label>Mois</label>
                             <select name='textmois'class='form-control'>
-                            <?php if (isset($_POST[''])) { echo repetitionM(); } ?>
+                                <?php if (isset($_POST[''])) { echo repetitionM(); } ?>
+                                <div class="feed-back">
+                                    good!
+                                </div>
                             </select>
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-4">
                             <label>Année</label>
                             <select name="textannee" id="" class="form-control">
                                 <?php if (isset($_POST['textannee'])) { echo repetitionA($annee);} ?>
+                                <div class="feed-back">
+                                    good!
+                                </div>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Ville: </label>
-                        <input type="text" name="ville" class="form-control" placeholder="" required>
+                        <input type="text" name="ville" class="form-control" placeholder="" class="form-control is-valid" required>
+                        <div class="feed-back">
+                            good!
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Age: </label>
-                        <input type="number" name="age" class="form-control" placeholder="" required>
+                        <input type="number" name="age" class="form-control" placeholder="" class="form-control is-valid" required>
+                        <div class="feed-back">
+                            good!
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Email: </label>
-                        <input type="email" name="email" class="form-control" placeholder="" required>
+                        <input type="email" name="email" class="form-control" placeholder="" class="form-control is-valid" required>
+                        <div class="feed-back">
+                            good!
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>Tel: </label>
-                        <input type="numero" name="numero" class="form-control" placeholder="" required>
+                        <input type="numero" name="numero" class="form-control" placeholder="" class="form-control is-valid" required>
+                        <div class="feed-back">
+                            good!
+                        </div>
                         <br>
                     </div>
                     <div class="form-group">
-                        <input type="submit" name="btn_Ajout" class="btn btn-primary btn-block" value="Envoyer" >
+                        <input type="submit" name="btn_Ajout" class="btn btn-primary btn-lg" value="Envoyer" >
                     </div>
                     <br>
                 </form>
@@ -122,7 +143,7 @@ $annee = 2080;
     <footer class="container">
         <div class="row">
             <hr>
-            <p class="text-center">Made by Helios 64</p>
+            <p class="text-center">Made by Helios64 | Tout droit reservé 2021</p>
         </div>
     </footer>
 </body>
